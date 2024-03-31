@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import './App.css';
+import Button from './Components/Button';
 
 function App() {
   
   
   return (
     <div className="App" id="quote-box">
-     <button onClick={GetQuote}>New Quote</button>
+      <h2 id="text"></h2>
+      <h4 id="author"></h4>
+     <Button buttonDisplayName="new-quote" id="new-quote"/>
     </div>
   );
 }
