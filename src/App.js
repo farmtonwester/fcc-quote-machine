@@ -21,6 +21,13 @@ class App extends Component {
     }));
   }
 
+  get selectedQuote() {
+    if (!this.state.quotes.length || !Number.isInteger(this.state.selectedQuoteIndex)) {
+      return;
+    }
+    return this.state.quotes[this.state.selectedQuoteIndex];
+  }
+
   selectQuoteIndex() {
     if (!this.state.quotes.length) {
       return;
@@ -29,32 +36,14 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.selectedQuoteIndex);
     return (
       <div className="App" id="quote-box">
-          <Button buttonDisplayName="New Quote" clickHandler={this.nextQuoteClickHandler} id="new-quote"/>
+        { this.selectedQuote ? `"${this.selectedQuote.quote}" - ${this.selectedQuote.author}` : '' }
+        <Button buttonDisplayName="New Quote" clickHandler={this.nextQuoteClickHandler} id="new-quote"/>
       </div>
     );
   }
 }
 
-// function GetQuote() {
-//   const [quote, setQuote] = useState(null);
-  
-//   fetch("https://api.quotable.io/random")
-//   .then(resp => resp.json())
-//   .then((data) => {
-//       setQuote(data.content);
-//       console.log(data);
-//     })
-//   .catch((error) => console.log(error));
-  
-//   return (
-//       <div>
-//         <h2>Quote of the Day: </h2>
-//         <p>{quote}</p>
-//       </div>
-//   )
-// }
 
 export default App;
