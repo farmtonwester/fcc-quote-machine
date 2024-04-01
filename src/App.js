@@ -1,20 +1,23 @@
-import { useState } from 'react'
+import React, { Component } from 'react'
 import './App.css';
 import Button from './Components/Button';
 
-function App() {
-  return (
-    <div className="App" id="quote-box">
-        <Button buttonDisplayName="New Quote" clickHandler={nextQuoteClickHandler}/>
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  nextQuoteClickHandler() {
+    console.log("Clicked!");
+  }
+
+  render() {
+    return (
+      <div className="App" id="quote-box">
+          <Button buttonDisplayName="New Quote" clickHandler={this.nextQuoteClickHandler} id="new-quote"/>
       </div>
-      //Button is currently not rendering to the DOM, I am not sure why yet.
-      //Fixed! The parentheses vs curly bracket syntax was not matching what the tutorial did. With parens, the return is implicit
-      //Next step is creating clickHandler to be passed to Button component
-      );
-    }
-    
-function nextQuoteClickHandler() {
-  console.log("Clicked!");
+    );
+  }
 }
 
 // function GetQuote() {
