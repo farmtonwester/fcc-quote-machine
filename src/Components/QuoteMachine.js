@@ -13,8 +13,8 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
     <Card>
         <CardContent>
-            <Typography>
-                {selectedQuote.quote} - {selectedQuote.author}
+            <Typography id="text">
+                {selectedQuote.quote} - <span id="author">{selectedQuote.author}</span>
             </Typography>
         </CardContent>
        <CardActions>
@@ -22,6 +22,7 @@ const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
             <IconButton
                 target="_blank"
                 href={`https://twitter.com/intent/tweet?text=${selectedQuote.quote}`}
+                id="tweet-quote"
             >
                 <FontAwesomeIcon icon={faTwitter} size="md"></FontAwesomeIcon>
             </IconButton>

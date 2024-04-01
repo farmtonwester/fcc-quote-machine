@@ -54,7 +54,7 @@ class App extends Component {
 
   render() {
     return (
-      <Grid className={this.props.classes.container} id="quote-box" justify="center" container>
+      <Grid className={this.props.classes.container} id="quote-box" justifyContent="center" container>
         <Grid xs={11} lg={8} item>
           {
             this.selectedQuote ? 
