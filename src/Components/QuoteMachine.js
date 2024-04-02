@@ -24,7 +24,7 @@ const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
                 href={`https://twitter.com/intent/tweet?text=${selectedQuote.quote}`}
                 id="tweet-quote"
             >
-                <FontAwesomeIcon icon={faTwitter} size="md"></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faTwitter} size="xs"></FontAwesomeIcon>
             </IconButton>
        </CardActions>
     </Card>
